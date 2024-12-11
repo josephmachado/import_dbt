@@ -1,0 +1,45 @@
+---
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: project_2
+version: 0.0.1
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: project_2
+
+# These configurations specify where dbt should look
+# for different types of files.
+# The `model-paths` config, for example, states that
+# models in this project can be
+# found in the "models/" directory. You probably won't
+# need to change these!
+model-paths: [models]
+analysis-paths: [analysis]
+test-paths: [tests]
+seed-paths: [data]
+macro-paths: [macros]
+snapshot-paths: [snapshots]
+target-path: target  # directory which will store compiled SQL files
+clean-targets:  # directories to be removed by `dbt clean`
+  - target
+  - dbt_modules
+# Configuring models
+models:
+  sde_dbt_tutorial:
+    # Applies to all files under models/marts/core/
+    marts:
+      core:
+        materialized: table
+      marketing:
+        materialized: view
+
+
+require-dbt-version: "1.9.0"
+seeds:
+  project_1:
+    +schema: seed_data
+    customer:
+      +column_types:
+        customer_id: int
