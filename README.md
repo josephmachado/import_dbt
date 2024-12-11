@@ -9,7 +9,9 @@ rm -rf myenv
 python -m venv myenv
 source myenv/bin/activate
 pip install -r requirements.txt
+source myenv/bin/activate
 dbt clean
+dbt deps
 dbt seed
 dbt run
 ```
