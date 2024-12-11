@@ -1,0 +1,12 @@
+---
+config:
+  send_anonymous_usage_stats: false
+project_1:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ./dbt.duckdb
+    prod:
+      type: duckdb
+      path: ./dbt-prod.duckdb
