@@ -3,6 +3,8 @@
 To use seed from project_1 in project_2:
 
 ```bash
+git clone https://github.com/josephmachado/import_dbt.git
+cd import_dbt
 cd project_2
 rm -rf myenv
 # set up venv and run dbt
