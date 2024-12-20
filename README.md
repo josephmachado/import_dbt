@@ -7,6 +7,7 @@ git clone https://github.com/josephmachado/import_dbt.git
 cd import_dbt
 cd project_2
 rm -rf myenv
+rm -rf *.duckdb
 # set up venv and run dbt
 python -m venv myenv
 source myenv/bin/activate

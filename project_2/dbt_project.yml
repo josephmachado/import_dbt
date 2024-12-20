@@ -37,9 +37,3 @@ models:
 
 
 require-dbt-version: "1.9.0"
-seeds:
-  project_1:
-    +schema: seed_data
-    customer:
-      +column_types:
-        customer_id: int
